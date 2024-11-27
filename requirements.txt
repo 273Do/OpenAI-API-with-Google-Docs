@@ -1,8 +1,11 @@
+# OpenAI APIを使用するためのライブラリ
 openai
 
+# 環境変数を読み込むためのライブラリ
 python-dotenv
 python-dateutil
 
+# Google Cloud PlatformのAPIを使用するためのライブラリ
 google-api-python-client
 google-auth
 google-auth-oauthlib

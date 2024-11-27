@@ -10,7 +10,7 @@ client = OpenAI()
 
 # サービスアカウントの認証情報ファイル
 current_dir = os.path.dirname(__file__)
-path = f"{current_dir}/service_account/thor_gd_credential.json"
+path = f"{current_dir}/service_account/credential.json"
 SERVICE_ACCOUNT_FILE = path
 
 # 使用するスコープ(権限)
