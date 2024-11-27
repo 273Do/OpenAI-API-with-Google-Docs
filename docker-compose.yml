@@ -1,0 +1,10 @@
+version: "3"
+services:
+  openai-api-with-google-docs:
+    restart: always
+    build: .
+    container_name: "openai-api-with-google-docs"
+    working_dir: "/root/"
+    tty: true
+    volumes:
+      - .:/root/
