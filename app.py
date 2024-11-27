@@ -1,4 +1,5 @@
 import os
+import sys
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from openai import OpenAI
@@ -34,7 +35,15 @@ def generate_feedback(estimate_sleep_df, cluster_stats):
 
     try:
         # Google Documentsからプロンプトを取得する
-        system_prompt, user_prompt, output_format = get_prompt()
+        success, error_message, result = get_prompt()
+
+        if success:
+            system_prompt, user_prompt, output_format = result
+        else:
+            # エラー表示
+            print("error--------------")
+            print(error_message)
+            sys.exit()
 
         # ChatGPTによるフィードバック生成
         res = client.chat.completions.create(
