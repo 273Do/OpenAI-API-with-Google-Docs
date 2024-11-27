@@ -45,25 +45,21 @@
 8. Google Drive に 専用テンプレートをコピーし，ドキュメントの URL を取得してください．(テンプレートについては開発者にお問い合わせください．)
 9. 取得した URL`https://docs.google.com/document/d/<DOCUMENT_ID>`の`<DOCUMENT_ID>`の部分を控えてください．
 10. `.env`ファイルに OpenAI API の API キーと控えた DOCUMENT_ID を記載してください．
-
-    > [!CAUTION]
-    > .env ファイルと認証情報は絶対に公開しないでください．
-
 11. `Docker Desktop`を起動して，`Dockerfile`があるディレクトリ(ルート)に移動します．
 12. `docker compose build`を実行してコンテナイメージを作成します．
 
 </details>
-<br>
+
+> [!CAUTION]
+> .env ファイルと認証情報は絶対に公開しないでください．
+>
+> <br>
 
 > 起動方法と終了方法について記載しています．
 
 <details>
 
 <summary>起動方法と終了方法</summary>
-
-> [!TIP]
-> コンテナイメージを作成したら，以降は以下の手順でコンテナを起動するだけで OK です.
-> 新たにライブラリや依存関係をインストールする場合は，`requirements.txt`にライブラリを記載して`docker compose build`を実行します．
 
 ### 起動方法
 
@@ -79,6 +75,10 @@
 2. `docker compose down`を実行してコンテナを終了します．(もしくは`Docker Desktop`のコンテナ終了ボタンを押します．)
 
 </details>
+
+> [!TIP]
+> コンテナイメージを作成したら，以降は以下の手順でコンテナを起動するだけで OK です.
+> 新たにライブラリや依存関係をインストールする場合は，`requirements.txt`にライブラリを記載して`docker compose build`を実行します．
 
 ## 🤖 クレジット・免責事項
 
