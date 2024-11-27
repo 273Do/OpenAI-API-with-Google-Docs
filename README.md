@@ -29,6 +29,7 @@
 2. 任意のディレクトリで`git clone https://github.com/273Do/OpenAI-API-with-Google-Docs`を実行してください．
 3. `Dockerfile`があるディレクトリ(ルート)に移動します．
 4. 移動したディレクトリに`.env`ファイルと`service_account`ディレクトリを作成します．
+
 5. `.env`ファイルに以下を記載してください．
 
    > OPENAI_API_KEY=
@@ -40,8 +41,23 @@
 8. Google Drive に 専用テンプレートをコピーし，ドキュメントの URL を取得してください．(テンプレートについては開発者にお問い合わせください．)
 9. 取得した URL`https://docs.google.com/document/d/<DOCUMENT_ID>`の`<DOCUMENT_ID>`の部分を控えてください．
 10. `.env`ファイルに OpenAI API の API キーと控えた DOCUMENT_ID を記載してください．
-11. `Docker Desktop`を起動して，`Dockerfile`があるディレクトリ(ルート)に移動します．
-12. `docker compose build`を実行してコンテナイメージを作成します．
+11. ファイル構成を確認してください．
+
+```
+ 📁openai-api-with-google-docs
+ └── 📁service_account
+     └── credential.json
+ └── .env
+ └── .gitignore
+ └── app.py
+ └── docker-compose.yml
+ └── Dockerfile
+ └── README.md
+ └── requirements.txt
+```
+
+12. `Docker Desktop`を起動して，`Dockerfile`があるディレクトリ(ルート)に移動します．
+13. `docker compose build`を実行してコンテナイメージを作成します．
 
 </details>
 
