@@ -46,6 +46,7 @@ def generate_feedback(estimate_sleep_df, cluster_stats):
                 {"role": "user", "content": (
                     f"{user_prompt}"
                 )},
+                # 入力データを指定
                 {"role": "user",
                  "content": f"睡眠データ: {estimate_sleep_df}，歩数クラスタリングデータ: {cluster_stats}，フォーマット: {output_format}"}
             ])
@@ -94,16 +95,23 @@ def get_prompt():
                         # ""が最初に検知されて，文字列がある場合，現在の変数に追加
                         prompt_list[current_index - 1] += text
 
-        return prompt_list
+        return True, None, prompt_list
 
     except Exception as e:
         return False, str(e), None
 
 
 # プロンプトを出力
-system_prompt, user_prompt, output_format = get_prompt()
-print(system_prompt)
-print("------------------")
-print(user_prompt)
-print("------------------")
-print(output_format)
+success, error_message, result = get_prompt()
+if success:
+    system_prompt, user_prompt, output_format = result
+    print("system_prompt--------------")
+    print(system_prompt)
+    print("user_prompt----------------")
+    print(user_prompt)
+    print("format_prompt--------------")
+    print(output_format)
+else:
+    # エラー表示
+    print("error--------------")
+    print(error_message)
