@@ -1,9 +1,7 @@
 __pycache__/
 
-.env
-
 .DS_Store
 
-.serverless
+.env
 
 service_account/
