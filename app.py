@@ -115,3 +115,13 @@ else:
     # エラー表示
     print("error--------------")
     print(error_message)
+
+# OpenAI APIを使用してフィードバックを生成
+success, error_message, feedback = generate_feedback("test", "test")
+if success:
+    print("feedback--------------")
+    print(feedback)
+else:
+    # エラー表示
+    print("error--------------")
+    print(error_message)
