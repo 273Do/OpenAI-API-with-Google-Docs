@@ -46,7 +46,7 @@ def generate_feedback(estimate_sleep_df, cluster_stats):
                 {"role": "user", "content": (
                     f"{user_prompt}"
                 )},
-                # 入力データを指定
+                # 入力データに合わせてcontentを設定してください．
                 {"role": "user",
                  "content": f"睡眠データ: {estimate_sleep_df}，歩数クラスタリングデータ: {cluster_stats}，フォーマット: {output_format}"}
             ])
